@@ -39,6 +39,8 @@ def clean_cropped_images(dir):
 			os.remove(os.path.join(dir, f))
 
 def main():
+	startMillisecond = 500
+
 	clean_cropped_images("frames_cropped")
 
 	names_buffer = open('names_buffer.txt', 'w')
@@ -64,6 +66,7 @@ def main():
 	
 	cropped_folder = next(os.walk("frames_cropped"))[2]
 
+	
 	for filename in cropped_folder:
 		if filename.endswith(name_files_extension):
 			current_name = detect_words('frames_cropped/'+filename)
