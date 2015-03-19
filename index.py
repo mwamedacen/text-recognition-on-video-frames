@@ -8,7 +8,7 @@ import re
 def detect_words(filename):
 	api = tesseract.TessBaseAPI()
 	api.SetOutputName("outputName");
-	api.Init(".","eng",tesseract.OEM_DEFAULT)
+	api.Init(".","fra",tesseract.OEM_DEFAULT)
 	api.SetPageSegMode(tesseract.PSM_AUTO)
 	pixImage=tesseract.pixRead(filename)
 	api.SetImage(pixImage)
@@ -40,6 +40,8 @@ def main():
 	for filename in filenames:
 		if filename.endswith(orginal_files_extensions):
 			crop_image(filename)
+
+	filenames = next(os.walk('.'))[2]
 
 	for filename in filenames:
 		if filename.endswith(cropped_files_extensions):
