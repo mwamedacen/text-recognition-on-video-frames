@@ -8,6 +8,7 @@ import csv
 from datetime import timedelta, date
 import time
 
+
 def detect_words(filename, left, top, width, height):
 	api = tesseract.TessBaseAPI()
 	api.SetOutputName("outputName");
