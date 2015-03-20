@@ -8,7 +8,7 @@ import re
 def detect_words(filename):
 	api = tesseract.TessBaseAPI()
 	api.SetOutputName("outputName");
-	api.Init(".","eng",tesseract.OEM_DEFAULT)
+	api.Init(".","fra",tesseract.OEM_DEFAULT)
 	api.SetPageSegMode(tesseract.PSM_AUTO)
 	pixImage=tesseract.pixRead(filename)
 	api.SetImage(pixImage)
